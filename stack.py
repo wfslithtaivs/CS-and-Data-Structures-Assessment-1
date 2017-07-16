@@ -78,12 +78,7 @@ class Stack(object):
 
         # FIXED
 
-        res = 0 
-        
-        for el in self:
-            res += 1
-
-        return res
+        return len(self._list)
         
     def empty(self):
         """Empty stack::
@@ -104,7 +99,7 @@ class Stack(object):
 
         # FIXED
 
-        self = Stack()
+        self._list = []
 
     def is_empty(self):
         """Is stack empty?

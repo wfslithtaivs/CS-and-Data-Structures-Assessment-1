@@ -2,55 +2,61 @@ Part 1: Discussion Questions
 
 Runtime:
 1. When calculating the Big O notation for a particular algorithm, it’s necessary to consider the length of time it takes for the algorithm to run as the algorithm’s workload approaches infinity. You can think of the workload as the number of tasks required to complete a job. 
-
-    Q: What determines the workload of figuring out whether your box of animal crackers contains an elephant? 
-    A: n, which is a number of crackers in a box. Worst case - no elephants, requires to check each cracker in a box. 
+   Q: What determines the workload of figuring out whether your box of animal crackers contains an elephant? 
+   A: n, which is a number of crackers in a box. Worst case - no elephants, requires checking each cracker in a box. 
 2. Q: Order the following runtimes in descending order of efficiency (that is, fastest runtimes first, slowest last) as n approaches infinity:
-    A:  O(1)
-        O(log n)
-        O(n)
-        O(n log n)
-        O(n^2)
-        O(2^n)
-
+   A:  O(1)
+       O(log n)
+       O(n)
+       O(n log n)
+       O(n^2)
+       O(2^n)
+       
 Stacks and Queues:
 1. In the following cases, would a stack or queue be a more appropriate data structure?
-     1. Q: The process of loading and unloading pallets onto a flatbed truck.
-        A: Neither. As a visual proof - this picture of a randomized loading process https://www.google.com/search?q=flatbed+truck&source=lnms&tbm=isch&sa=X&ved=0ahUKEwijtpaV34rVAhXGRo8KHZ3RDYwQ_AUICigB&biw=1160&bih=621#tbm=isch&q=flatbed+truck+with+pallets&imgrc=SO52VFqWBB9hMM:
-     2.  Q: Putting bottle caps on bottles of beer as they roll down an assembly line.
-         A: Queue.
-     3.  Q: Calculating the solution to this mathematical expression: 2 + (7 * 4) - (3 / 2).
-         A: Stack.
+   1. Q: The process of loading and unloading pallets onto a flatbed truck.
+      A: Neither. Pictures of a randomized loading process as a visual proof - https://www.google.com/search?q=flatbed+truck&source=lnms&tbm=isch&sa=X&ved=0ahUKEwijtpaV34rVAhXGRo8KHZ3RDYwQ_AUICigB&biw=1160&bih=621#tbm=isch&q=flatbed+truck+with+pallets&imgrc=SO52VFqWBB9hMM:
+   2. Q: Putting bottle caps on bottles of beer as they roll down an assembly line.
+      A: Queue.
+   3. Q: Calculating the solution to this mathematical expression: 2 + (7 * 4) - (3 / 2).
+      A: Stack.
 2. Q: Describe two more situations where a queue would be an appropriate data structure.
    A: 1. Step-by-step instruction.
       2. Boba line during a lunch.
 3. Q: Describe two more situations where a stack would be an appropriate data structure.
-   A: 1. PEZ candies dispencer - http://webpages.charter.net/gschenberg/images/direct.jpg - no way to eat the bottom candy without having been eating all previous. 
+   A: 1. PEZ candies dispenser - http://webpages.charter.net/gschenberg/images/direct.jpg - no way to eat the bottom candy without having been eating all previous. 
       2. A glass of water - ignoring liquid nature of an initial substance if we suppose that each sip is a pop method which popping out only one the very top unit of water then we have a perfect stack. 
 
 Linked Lists:
 1. Q: Given the linked list below, which are the nodes? What is the data for each node? 
-   A: List nodes represented on the given diagram as a boxes with a data field and a link to the next element. 
+   A: List nodes represented on the given diagram as boxes with a data field and a link to the next element. 
       "Apple"  (data field) | next -> (pointing to "Berry" | next) 
       "Berry"  (data field)| next -> (pointing to "Cherry" | next)
       "Cherry" (data field) | next -> (pointing to None)
-    Q: Where is the head? 
-    A: Head is the first element of a list. 
+   Q: Where is the head? 
+   A: Head is the first element of a list. 
        On the given diagram class LLIST wisely store the property LLIST.head which is a pointer to the first element of a list.
-    Q: Where is the tail? 
-    A: "Who knows" (c) 
-       Tail is the last element of a list. If list has <= 1 elements, then head and tail are equal.  
+   Q: Where is the tail? 
+   A: "Who knows" (c) 
+       The tail is the last element of a list. If the list has <= 1 elements, then head and tail are equal.  
 2. Q: What’s the difference between doubly- and singly-linked lists?  
    A: A number of links posted on each node. For singly-linked list it is possible to traverse nodes following only one direction, for doubly-linked it is possible to walk back and forth.
 3. Q: Why is it faster to append to a linked list if we keep track of the tail as an attribute?   
    A: Find a tail in a list without a tail pointer -> O(n);
       Find a tail in a list with a tail pointer -> O(1);
-      Ref.  Runtime Q2 - O(n) is a bad choice if O(1) might be achieved by adding a very little amount of additional information.
+      Ref. Runtime Q2 - O(n) is a bad choice if O(1) might be achieved by adding a very little amount of an additional information.
  
 Trees: 
 1. Q: Given the tree above, in what order would a Breadth First Search (BFS) algorithm visit each node until finding burritos (starting at food)? (Assume nodes are enqueued in left-to-right order.) Just list the order of nodes visited; no need to recreate the state of the algorithm data in your answer.
-   A: food : Italian : Indian : Mexican : lasagna : pizza : tikka massala : saag : burritos 
+   A: food : 
+        Italian : Indian : Mexican : 
+            lasagna : pizza : tikka massala : saag : burritos 
 2. Q: Given the tree above, in what order would a Depth First Search (DFS) algorithm visit each node until finding Chicago-style (starting at food)? (Assume nodes are pushed in left-to-right order.) Just list the order of nodes visited; no need to recreate the state of the algorithm data in your answer.
-   A: food: Italian : Indian : Mexican : burritos : tacos : enchilladas : tikka massala : saag : lasagna : pizza : thin crust : Chicago-style
+   A: food: 
+        Italian : Indian : Mexican : 
+           burritos : tacos : enchilladas
+                tikka massala: saag
+                    lasagna : pizza 
+                        thin crust : Chicago-style
 3. Q: How is a binary search tree different from other trees?
-   A: It is ordered and balanced to have searching time not exceed O(log n). 
+   A: It is ordered and balanced to have searching time not to exceed O(log n).
