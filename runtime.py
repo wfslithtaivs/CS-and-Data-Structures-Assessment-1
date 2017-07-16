@@ -3,9 +3,7 @@ def string_compare(s1, s2):
 
     Put runtime here:
     -----------------
-    [               ]
-
-
+    [ const + n ~ O(n) ]
     """
 
     if len(s1) != len(s2):
@@ -23,7 +21,7 @@ def has_exotic_animals(animals):
 
     Put runtime here:
     -----------------
-    [               ]
+    [n + n = 2n ~ 2 * O(n) ~ O(n)]
 
     """
 
@@ -38,7 +36,7 @@ def sum_zero_1(numbers):
 
     Put runtime here:
     -----------------
-    [               ]
+    [ n + n^2 = n(n+1) ~ n*n = n^2 ~ O(n^2) - in a worst case, but in average - O(n)]
 
     """
 
@@ -48,8 +46,8 @@ def sum_zero_1(numbers):
     # we'll learn exactly why later
     s = set(numbers)
 
-    for x in s:
-        if -x in s:
+    for x in s: # n
+        if -x in s: # worst case O(n), but average O(1) - https://wiki.python.org/moin/TimeComplexity
             result.append([-x, x])
 
     return result
@@ -60,16 +58,16 @@ def sum_zero_2(numbers):
 
     Put runtime here:
     -----------------
-    [               ]
+    [ n*n ~ O(n^2)  ]
 
     """
 
     result = []
 
-    for x in numbers:
-        for y in numbers:
-            if x == -y:
-                result.append((x, y))
+    for x in numbers: # n
+        for y in numbers: # n
+            if x == -y: # const
+                result.append((x, y)) # const
     return result
 
 
@@ -80,14 +78,14 @@ def sum_zero_3(numbers):
 
     Put runtime here:
     -----------------
-    [               ]
+    [ n * (n + const + const + n + n) = n * (3n + 2const) ~ n^2 ~ O(n^2) }               ]
 
     """
 
     result = []
 
-    for x in numbers:
-        for y in numbers:
-            if x == -y and (x, y) not in result and (y, x) not in result:
+    for x in numbers: # n
+        for y in numbers: # n
+            if x == -y and (x, y) not in result and (y, x) not in result: # const + n + n
                 result.append((x, y))
     return result
